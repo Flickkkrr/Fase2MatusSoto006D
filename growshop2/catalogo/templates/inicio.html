@@ -1,13 +1,15 @@
 {% extends "base_generic.html" %}
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>QueCorra Growshop</title>
+    <title>{% block title %} QueCorra Growshop {% endblock %}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/EstInicio.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/EstInicio.css' %}">
     <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="icon" href="{% static 'img/icono.ico' %}" type="image/icon type">
@@ -40,7 +42,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         
-                        <a href="autocultivo.html" rel="noopener noreferrer" target="_self"> <img
+                        <a href="{% url 'autocultivo' %}" rel="noopener noreferrer" target="_self"> <img
                                 class="d-block w-100 img-fluid" src="{% static 'img/novedad2marihuanas.jpg' %}" alt="Cultivate"
                                 width="1264" height="555"></a>
                         <div class="carousel-caption">
@@ -49,7 +51,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <a href="cepa1.html" rel="noopener noreferrer" target="_self"> <img
+                        <a href="{% url 'cepa1' %}" rel="noopener noreferrer" target="_self"> <img
                                 class="d-block w-100 img-fluid" src="{% static 'img/novedadkritikal.jpg' %}" alt="Novedad" width="1264"
                                 height="555"></a>
                         <div class="carousel-caption">
@@ -99,7 +101,7 @@
                     <div class="text-block">
                         <h4>¿BONGAZO?</h4>
                         <p>LOS MEJORES INSUMOS PARA LA MEJOR VOLÁ</p>
-                        <a href="proximamente.html" class="btnNew">
+                        <a href="{% url 'proximamente' %}" class="btnNew">
                             <div class="arrowNew"></div>
                             Ir
                         </a>
@@ -111,7 +113,7 @@
                     <div class="text-block">
                         <h4>QUECORRA</h4>
                         <p>CONÓCENOS UN POCO MÁS</p>
-                        <a href=# class="btnNew">
+                        <a href="{% url 'quienes' %}" class="btnNew">
                             <div class="arrowNew"></div>
                             Ir
                         </a>
@@ -128,7 +130,7 @@
                     <div class="text-block">
                         <h3>HONGOS MILENARIOS</h3>
                         <p>MILES DE VARIEDADES</p>
-                        <a href="autocultivo.html" class="btnNew">
+                        <a href="{% url 'autocultivo' %}" class="btnNew">
                             <div class="arrowNew"></div>
                             Ir
                         </a>
@@ -141,90 +143,9 @@
         </div>
     </div>
     </div>
-
-    <footer>
-        <div id=arriba>
-            <div class="row">
-                <div class="col-xl-8 col-lg-7 col-sm3 col-md-6" style="background-color:#E65573">
-                    <h5>¡Paga como más te acomode!</h5>
-                </div>
-                <div class="col-xl-4 col-lg-5 col-sm3 col-md-6" style="background-color:#E65573">
-                    <ul id=metodosP>
-                        <li><img src="{% static 'img/metodoP1.jpg' %}"></li>
-                        <li><img src="{% static 'img/metodoP2.jpg' %}"></li>
-                        <li><img src="{% static 'img/metodoP3.jpg' %}"></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <section>
-            <div id=medio>
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-sm-12 col-md-4" style="background-color:#8B65C1">
-                            <h5>Novedades</h5>
-                            <form action="" method="post" name="suscripcion" onsubmit="return validacion()">
-                                <input type="text" name="cor" id="correo" placeholder="nombre@dominio.cl">
-                                <input type="submit" value="¡Suscribete!">
-                                <br><br>
-                            </form>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-sm-12 col-md-4" style="background-color:#8B65C1">
-                            <h5>Ayuda</h5>
-                            <ul id=enumerables>
-                                <li><a href="https://color.adobe.com/es/create/color-wheel" target="_self">Preguntas
-                                        frecuentes</a>
-                                </li>
-                                <li><a href="https://color.adobe.com/es/create/color-wheel" target="_self">Atención al
-                                        cliente</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-sm-12 col-md-4" style="background-color:#8B65C1">
-                            <h5>Síguenos en</h5>
-                            <ul id=redes>
-                                <li>
-                                    <a href="https://www.facebook.com/" title="Facebook" rel="noopener noreferrer"
-                                        target="_blank"> <img src="{% static 'img/fb-icon.jpg' %}"></a>
-
-                                </li>
-                                <li>
-                                    <a href="https://www.instagram.com/" title="Instagram" rel="noopener noreferrer"
-                                        target="_blank"><img src="{% static 'img/ig-icon.jpg' %}"></a>
-                                </li>
-
-                                <li>
-                                    <a href="https://www.twitch.tv/" title="Twitch" rel="noopener noreferrer"
-                                        target="_blank"><img src="{% static 'img/tw-icon.jpg' %}"></a>
-                                </li>
-                            </ul>
-                            <br>
-                            <a class="btntop" href="#"><i class="fas fa-arrow-up"></i></a>
-                        </div>
-                    </div>
-            </div>
-        </section>
-        <section>
-            <div id=abajo>
-                <div class="row">
-                    <div class="col-xl-6 col-sm3 col-md-6">
-                        <div id=derechos>
-                            <h6>Todos los derechos reservados © 2020 QueCorra</h6>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-sm3 col-md-6">
-                        <div id=teryCon>
-                            <h6><a href="terminosycon.html" rel="noopener noreferrer" target="_self">Términos y
-                                    condiciones</a> | <a href="terminosycon.html" rel="noopener noreferrer"
-                                    target="_self">Políticas de privacidad</a></h6>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            </div>
-        </section>
-    </footer>
     {% endblock %}
+    
+    
 </body>
 
 </html>

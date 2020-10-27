@@ -48,3 +48,30 @@ def registro(request): #Request = consulta HTTP
         context={'num_catego':num_catego},
     )
 
+def cepa1(request): #Request = consulta HTTP
+    num_catego=Categoria.objects.all()#.count()
+    
+    return render( #Crea y retorna una página HTML como respuesta
+        request,
+        'cepa1.html',
+        context={'num_catego':num_catego},
+    )
+
+def seta1(request): #Request = consulta HTTP
+    num_catego=Categoria.objects.all()#.count()
+    
+    return render( #Crea y retorna una página HTML como respuesta
+        request,
+        'seta1.html',
+        context={'num_catego':num_catego},
+    )
+
+def terminosycon(request): #Request = consulta HTTP
+    num_catego=Categoria.objects.all()#.count()
+    
+    return render( #Crea y retorna una página HTML como respuesta
+        request,
+        'terminosycon.html',
+        context={'num_catego':num_catego},
+    )
+
