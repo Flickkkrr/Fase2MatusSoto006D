@@ -1,6 +1,6 @@
 {% extends "base_generic.html" %}
 
-
+{% block content %}
 <!DOCTYPE html>
 <html>
 
@@ -9,10 +9,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/EstTienda.css' %}">
-    <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="icon" href="{% static 'img/icono.ico' %}" type="image/icon type">
+
+    <!-- CSS Propios-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/EstTienda.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+    
+    <!-- JS Propios-->
     <script src="{% static 'js/Funciones.js' %}" type="text/Javascript"></script>
     <style>
         body {
@@ -27,16 +31,13 @@
 </head>
 
 <body>
-    {% block content %}
-    {% load static %}
-
     <div id=capa>
         <!--TITULO AUTOCULTIVO-->
         <br>
         <br>
         <div class="row justify-content-center">
             <div class="col-xl-11 col-lg-10 col-md-10 col-sm-10 col-10">
-                <div id=caja style="background-image: url('img/sinseñal.png');">
+                <div id=caja style="background-image: url('/static/img/sinseñal.png');">
                     <div class="letras">
                         <center>
                             <h1>¡Proximamente!</h1>
@@ -52,18 +53,6 @@
         <br>
     </div> <!-- -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
-    {% endblock %}
-
 </body>
-
 </html>
+{% endblock %}
