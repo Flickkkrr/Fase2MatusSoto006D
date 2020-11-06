@@ -26,6 +26,9 @@ class Accesorio(models.Model):
 	resumen = models.TextField(max_length=1000)
 	categoria = models.ManyToManyField(Categoria)
     
+	def get_absolute_url(self):
+		return reverse('accesorio-detail', args=[str(self.id)])
+
 	def __str__(self):
 		return self.nombre
     

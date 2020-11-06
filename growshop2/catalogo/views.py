@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from . models import Categoria, Accesorio, InstanciaAccesorio, Marca
 from django.views import generic
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from . models import Categoria, Accesorio, InstanciaAccesorio, Marca
 
 # Create your views here.
 def inicio(request): #Request = consulta HTTP
@@ -74,4 +76,19 @@ def terminosycon(request): #Request = consulta HTTP
         'terminosycon.html',
         context={'num_catego':num_catego},
     )
+
+class AccesorioCreate(CreateView):
+    model = Accesorio
+    fields = '__all__'
+
+class AccesorioUpdate(UpdateView):
+    model = Accesorio
+    fields = '__all__'
+    
+class AccesorioDelete(DeleteView):
+    model = Accesorio
+    success_url = reverse_lazy('Accesorios')
+
+class AccesorioDetailView(generic.DetailView):
+    model = Accesorio 
 

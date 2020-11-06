@@ -32,6 +32,29 @@ header {
     margin-right: 14px;
 }
 
+#categorias li{
+    text-align: center;
+    overflow: hidden;
+    display: inline-block;
+    width: 210px;
+    background-color: #cf71eb;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+#categorias li:hover{
+    cursor: pointer;
+}
+
+#categorias a{
+    display: block;
+    list-style-type: none;
+   
+    
+}
+
+#cat
+
 footer #arriba{
     background: #E65573;
     padding-top: 15px;
@@ -126,14 +149,6 @@ footer #abajo{
     text-decoration: none;
 }
 
-#caja {
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 1px;
-    padding-left: 5px;
-    margin: 0;
-}
-
 .letras h1{
     color: white;
 }
@@ -160,6 +175,3 @@ html{
     color: white;
     font-size: 22px;
 }
-
-
-
